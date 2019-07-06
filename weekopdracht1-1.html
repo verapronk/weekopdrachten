@@ -1,0 +1,31 @@
+<script>
+	
+	
+
+	function start(){
+		var voornaam = document.getElementById("voornaam").value
+		var achternaam = document.getElementById("achternaam").value
+		var geboortedatum = document.getElementById("geboortedatum").value
+
+		var welkom = document.getElementById("deDiv")
+		welkom.innerHTML = "Dag " + voornaam + " " + achternaam + " fijn dat je op " + geboortedatum + " geboren bent."
+		console.log(welkom.innerHTML);
+		}
+	
+</script>
+
+<style>
+</style>
+
+Voornaam <br>
+<input type=text id="voornaam"> <br><br>
+
+Achternaam <br>
+<input type=text id="achternaam"> <br><br>
+
+Geboortedatum <br>
+<input type=text id="geboortedatum"> <br><br>
+
+<input type=button onclick="start()" value="aanmelden">
+<hr>
+<div id=deDiv>Ben je er bij?</div>

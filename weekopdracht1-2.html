@@ -1,0 +1,38 @@
+<script>
+    var nederlands = document.getElementById("tekstNL");
+    var engels = document.getElementById("tekstEN");
+
+
+    function vertalen() {
+
+    }
+</script>
+
+<style>
+    .talen {
+        width: 300px;
+        height: 150px;
+        border: 1px;
+        padding: 30px;
+        margin: 20px;
+        background-color: rgb(243, 243, 243);
+        font-family: 'Lucida Sans';
+        float:left;
+    }
+
+    #vertaalknop {
+        width: 100px;
+        margin: 20px;
+        padding: 10px;
+        border-radius: 6px;
+        border-color: rgb(159, 211, 15);
+        background-color: rgb(159, 211, 15);
+        float:left;
+    }
+</style>
+
+<div id="wrapper">
+    <div id=tekstNL class="talen"> NL tekst </div>
+    <input type=button id="vertaalknop" onclick="vertalen()" value="Vertaal dan">
+    <div id=tekstEN class="talen"> EN tekst </div>
+</div>
