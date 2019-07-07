@@ -1,33 +1,35 @@
 <script>
-    var appels = parseInt("2")
-    var ijsjes = parseInt("1.5")
-    var pasta = parseInt("3")
-    var koffie = parseInt("4.5")
-    var koekjes = parseInt("1")
+    var prijzen = [2, 1.5, 3, 4.5, 1];
+    var totaal = [];
 
-    function optellen() {
-        var totaal = document.getElementById("totaal");
-        totaal.innerHTML = "€ " + parseFloat(appels + ijsjes).toFixed(2);
-        console.log(parseFloat(appels + ijsjes).toFixed(2));
-    }   // uitkomst telt wel op, maar rond altijd af naar beneden
+    function getSum(total, num) {
+        return total + Math.round(num);
+    }
+
+    function optellen(prijs) {
+        totaal.push(prijzen[prijs]);
+        document.getElementById("totaaldiv").innerHTML = "€ " + totaal.reduce(getSum, 0);
+        console.log(totaal);
+    }
 </script>
 
 <style>
-        h1, #totaal {
+    h1,
+    #totaaldiv {
         font-family: Verdana, Geneva, Tahoma, sans-serif;
         font-size: medium;
-        }
+    }
 
-        #totaal{
-            margin-top: 50px;
-        }
+    #totaaldiv {
+        margin-top: 50px;
+    }
 </style>
 
 <h1>Supermarkt</h1>
-<input type=button id="appels" onclick="optellen(this)" value="Appels">
-<input type=button id="ijsjes" onclick="optellen(this)" value="Ijsjes">
-<input type=button id="pasta" onclick="optellen(this)" value="Pasta">
-<input type=button id="koffie" onclick="optellen(this)" value="Koffie">
-<input type=button id="koekjes" onclick="optellen(this)" value="Koekjes">
+<input type=button id="appels" onclick="optellen([0])" value="Appels">
+<input type=button id="ijsjes" onclick="optellen([1])" value="Ijsjes">
+<input type=button id="pasta" onclick="optellen([2])" value="Pasta">
+<input type=button id="koffie" onclick="optellen([3])" value="Koffie">
+<input type=button id="koekjes" onclick="optellen([4])" value="Koekjes">
 
-<div id="totaal">€</div>
+<div id="totaaldiv">€ 0,00</div>
