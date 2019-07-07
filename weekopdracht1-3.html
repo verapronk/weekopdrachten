@@ -1,13 +1,30 @@
 
 <!-- saved from url=(0059)file:///C:/Users/Vera/Desktop/bootcamp/weekopdracht1-3.html -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><script>
+    var boodschappen = [];
+
     function toevoegen() {
         var ingredient = document.getElementById("ingredient").value;
         var hoeveelheid = document.getElementById("hoeveelheid").value;
-        //alert("toegevoegd!");
-
         var lijstje = document.getElementById("lijstje");
-        lijstje.innerHTML = ingredient + " - " + hoeveelheid;
+        boodschappen.push(ingredient + " - " + hoeveelheid + "<br>");
+        lijstje.innerHTML = boodschappen;
+
+
+        for (var i = 0; i < boodschappen.length; i++) {
+            lijstje = boodschappen.concat(boodschappen);
+            console.log(boodschappen);
+        }
+    }
+
+    function refresh(){
+        boodschappen = [];
+        lijstje.innerHTML = boodschappen;
+    }
+
+    function verwijder(){
+        boodschappen.pop();
+        lijstje.innerHTML = boodschappen;
     }
 </script>
 
@@ -18,11 +35,19 @@
     }
 </style>
 
-</head><body><h1>Voeg ingredienten toe</h1>
-<input type="text" id="ingredient" placeholder="ingredient">
-<input type="text" id="hoeveelheid" placeholder="hoeveelheid">
-<input type="button" value="+" onclick="toevoegen()">
+</head>
 
-<hr>
-Boodschappenlijstje: <br><br>
-<div id="lijstje">434 - 434</div></body></html>
+<body>
+    <h1>Voeg ingredienten toe</h1>
+    <input type="text" id="ingredient" placeholder="ingredient">
+    <input type="text" id="hoeveelheid" placeholder="hoeveelheid">
+    <input type="button" value="+" onclick="toevoegen()">
+
+    <hr>
+    Boodschappenlijstje: <br><br>
+    <div id="lijstje"> - </div>
+    <input type="button" id="verwijder" value="verwijder laatste" onclick="verwijder()">
+    <input type="button" id="refresh" value="refresh" onclick="refresh()">
+
+
+</body></html>
