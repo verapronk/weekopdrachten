@@ -1,0 +1,28 @@
+
+<!-- saved from url=(0059)file:///C:/Users/Vera/Desktop/bootcamp/weekopdracht1-3.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><script>
+    function toevoegen() {
+        var ingredient = document.getElementById("ingredient").value;
+        var hoeveelheid = document.getElementById("hoeveelheid").value;
+        //alert("toegevoegd!");
+
+        var lijstje = document.getElementById("lijstje");
+        lijstje.innerHTML = ingredient + " - " + hoeveelheid;
+    }
+</script>
+
+<style>
+    h1 {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: medium;
+    }
+</style>
+
+</head><body><h1>Voeg ingredienten toe</h1>
+<input type="text" id="ingredient" placeholder="ingredient">
+<input type="text" id="hoeveelheid" placeholder="hoeveelheid">
+<input type="button" value="+" onclick="toevoegen()">
+
+<hr>
+Boodschappenlijstje: <br><br>
+<div id="lijstje">434 - 434</div></body></html>
