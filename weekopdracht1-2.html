@@ -1,13 +1,20 @@
 <script>
+    var tekstNL = "Een giraffe met een hoedje";
     var tekstEN = "A giraffe with a hat";
 
     function vertalen() {
-        tekstNL.innerHTML = tekstEN;
+        //taal.innerHTML = tekstEN;
+        
+        if(taal.innerHTML == tekstNL){
+            taal.innerHTML = tekstEN;
+        } else {
+            taal.innerHTML = tekstNL;
+        }
     }
 </script>
 
 <style>
-    #tekstNL {
+    #taal {
         width: 300px;
         height: 150px;
         border: 1px;
@@ -28,5 +35,5 @@
 </style>
 
 
-<div id="tekstNL"> Een giraffe met een hoedje </div>
+<div id="taal">Een giraffe met een hoedje</div>
 <input type=button class="button" onclick="vertalen()" value="Vertaal dan">
