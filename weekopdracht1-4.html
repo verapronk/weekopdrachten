@@ -1,0 +1,33 @@
+<script>
+    var appels = parseInt("2")
+    var ijsjes = parseInt("1.5")
+    var pasta = parseInt("3")
+    var koffie = parseInt("4.5")
+    var koekjes = parseInt("1")
+
+    function optellen() {
+        var totaal = document.getElementById("totaal");
+        totaal.innerHTML = "€ " + parseFloat(appels + ijsjes).toFixed(2);
+        console.log(parseFloat(appels + ijsjes).toFixed(2));
+    }   // uitkomst telt wel op, maar rond altijd af naar beneden
+</script>
+
+<style>
+        h1, #totaal {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: medium;
+        }
+
+        #totaal{
+            margin-top: 50px;
+        }
+</style>
+
+<h1>Supermarkt</h1>
+<input type=button id="appels" onclick="optellen(this)" value="Appels">
+<input type=button id="ijsjes" onclick="optellen(this)" value="Ijsjes">
+<input type=button id="pasta" onclick="optellen(this)" value="Pasta">
+<input type=button id="koffie" onclick="optellen(this)" value="Koffie">
+<input type=button id="koekjes" onclick="optellen(this)" value="Koekjes">
+
+<div id="totaal">€</div>
