@@ -1,0 +1,93 @@
+<script>
+    var groen = "#9FC684"
+    var blauw = "#3A5195"
+    var spelerkleur = groen
+
+    function cellClick(xId) {
+        //alert(xId);                    // haalt het cell id op
+        var cellKleur = document.getElementById(xId);
+        cellKleur.style.backgroundColor = spelerkleur;
+
+        if (spelerkleur == groen) {
+            spelerkleur = blauw
+        } else spelerkleur = groen
+    }
+</script>
+
+<style>
+    table,
+    tr,
+    td {
+        background-color: rgb(240,240,240);
+        border: 1px solid rgb(180, 180, 180);
+        border-collapse: collapse;
+    }
+
+    td {
+        height: 50px;
+        width: 50px;
+    }
+
+    td:hover {
+        background-color: rgb(255, 255, 255);
+    }
+</style>
+
+<div id="speelveld">
+    <table>
+        <tr>
+            <td id="a1" onclick="cellClick(this.id)"> </td>
+            <td id="b1" onclick="cellClick(this.id)"> </td>
+            <td id="c1" onclick="cellClick(this.id)"> </td>
+            <td id="d1" onclick="cellClick(this.id)"> </td>
+            <td id="e1" onclick="cellClick(this.id)"> </td>
+            <td id="f1" onclick="cellClick(this.id)"> </td>
+            <td id="g1" onclick="cellClick(this.id)"> </td>
+        </tr>
+        <tr>
+            <td id="a2" onclick="cellClick(this.id)"> </td>
+            <td id="b2" onclick="cellClick(this.id)"> </td>
+            <td id="c2" onclick="cellClick(this.id)"> </td>
+            <td id="d2" onclick="cellClick(this.id)"> </td>
+            <td id="e2" onclick="cellClick(this.id)"> </td>
+            <td id="f2" onclick="cellClick(this.id)"> </td>
+            <td id="g2" onclick="cellClick(this.id)"> </td>
+        </tr>
+        <tr>
+            <td id="a3" onclick="cellClick(this.id)"> </td>
+            <td id="b3" onclick="cellClick(this.id)"> </td>
+            <td id="c3" onclick="cellClick(this.id)"> </td>
+            <td id="d3" onclick="cellClick(this.id)"> </td>
+            <td id="e3" onclick="cellClick(this.id)"> </td>
+            <td id="f3" onclick="cellClick(this.id)"> </td>
+            <td id="g3" onclick="cellClick(this.id)"> </td>
+        </tr>
+        <tr>
+            <td id="a4" onclick="cellClick(this.id)"> </td>
+            <td id="b4" onclick="cellClick(this.id)"> </td>
+            <td id="c4" onclick="cellClick(this.id)"> </td>
+            <td id="d4" onclick="cellClick(this.id)"> </td>
+            <td id="e4" onclick="cellClick(this.id)"> </td>
+            <td id="f4" onclick="cellClick(this.id)"> </td>
+            <td id="g4" onclick="cellClick(this.id)"> </td>
+        </tr>
+        <tr>
+            <td id="a5" onclick="cellClick(this.id)"> </td>
+            <td id="b5" onclick="cellClick(this.id)"> </td>
+            <td id="c5" onclick="cellClick(this.id)"> </td>
+            <td id="d5" onclick="cellClick(this.id)"> </td>
+            <td id="e5" onclick="cellClick(this.id)"> </td>
+            <td id="f5" onclick="cellClick(this.id)"> </td>
+            <td id="g5" onclick="cellClick(this.id)"> </td>
+        </tr>
+        <tr>
+            <td id="a6" onclick="cellClick(this.id)"> </td>
+            <td id="b6" onclick="cellClick(this.id)"> </td>
+            <td id="c6" onclick="cellClick(this.id)"> </td>
+            <td id="d6" onclick="cellClick(this.id)"> </td>
+            <td id="e6" onclick="cellClick(this.id)"> </td>
+            <td id="f6" onclick="cellClick(this.id)"> </td>
+            <td id="g6" onclick="cellClick(this.id)"> </td>
+        </tr>
+    </table>
+</div>
