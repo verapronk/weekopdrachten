@@ -2,16 +2,16 @@
     var prijzen = [2, 1.5, 3, 4.5, 1];
     var totaal = [];
 
-
+    // een abstracte functie die de waarden van "een" array kan optellen
+    //count(totaal) -> geeft de waarde van y voor array "totaal"
     function count(x){
         var y = 0
         for (var i = 0; i < x.length; i++) {
             y = y + x[i]
         }
         return(y)
-    }
-    count(totaal)
-  
+    } 
+    
 /*
     function getSum(total, num) {
         return total + Math.round(num);  //totaal.reduce(getSum, 0);
@@ -22,7 +22,6 @@
         document.getElementById("totaaldiv").innerHTML = "€ " + count(totaal);
         console.log(totaal);
     }
-    
 </script>
 
 <style>
@@ -38,10 +37,10 @@
 </style>
 
 <h1>Supermarkt</h1>
-<input type=button id="appels" onclick="optellen([0])" value="Appels">
-<input type=button id="ijsjes" onclick="optellen([1])" value="Ijsjes">
-<input type=button id="pasta" onclick="optellen([2])" value="Pasta">
-<input type=button id="koffie" onclick="optellen([3])" value="Koffie">
-<input type=button id="koekjes" onclick="optellen([4])" value="Koekjes">
+<input type=button id="appels" onclick="optellen([0])" value="Appels">      <!-- tel "2"-->
+<input type=button id="ijsjes" onclick="optellen([1])" value="Ijsjes">      <!-- tel "1,5"-->
+<input type=button id="pasta" onclick="optellen([2])" value="Pasta">        <!-- tel "3"-->
+<input type=button id="koffie" onclick="optellen([3])" value="Koffie">      <!-- tel "4.5"-->
+<input type=button id="koekjes" onclick="optellen([4])" value="Koekjes">    <!-- tel "1"-->
 
 <div id="totaaldiv">€ 0,00</div>

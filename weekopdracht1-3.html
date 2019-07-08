@@ -1,8 +1,9 @@
+<script>
+    // boodschappen worden naar deze lege array gepushed
+    var boodschappen = [];  
 
-<!-- saved from url=(0059)file:///C:/Users/Vera/Desktop/bootcamp/weekopdracht1-3.html -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><script>
-    var boodschappen = [];
-
+    // 1 knop voegt de waarde van 2 tekstvelden toe aan de array boodschappen
+    // dan print hij de array naar een lege div "lijstje"
     function toevoegen() {
         var ingredient = document.getElementById("ingredient").value;
         var hoeveelheid = document.getElementById("hoeveelheid").value;
@@ -10,18 +11,23 @@
         boodschappen.push(ingredient + " - " + hoeveelheid + "<br>");
         lijstje.innerHTML = boodschappen;
 
-
+    // concat is concateneren, dus onclick:
+    // print de waarde van array boodschappen (eerste keer leeg)
+    // + de nieuwe waarden die je net hebt gepushed 
         for (var i = 0; i < boodschappen.length; i++) {
-            lijstje = boodschappen.concat(boodschappen);
+            lijstje = boodschappen.concat(boodschappen);  
             console.log(boodschappen);
-        }
+        }   
     }
 
+    // zeg letterlijk dat de waarde van je array niks is en print deze
     function refresh(){
         boodschappen = [];
         lijstje.innerHTML = boodschappen;
     }
 
+    // arr.pop() verwijderd de laatste waarde uit een array
+    // print opnieuw de array
     function verwijder(){
         boodschappen.pop();
         lijstje.innerHTML = boodschappen;

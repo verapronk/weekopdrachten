@@ -4,11 +4,11 @@
     
     function volgende() {
         var cirkel = document.getElementById("cirkel");
-        cirkel.style.backgroundColor = kleuren[nummer]
-        nummer = nummer + 1;
+        cirkel.style.backgroundColor = kleuren[nummer]      // is de eerste keer 0, dus "green"
+        nummer = nummer + 1;                                // wordt de volgende keer 1, dus "orange"
         console.log(nummer);
 
-        if(nummer > 2){
+        if(nummer > 2){                                     // als nummer eenmaal 3 is, wordt dan weer 0, dus "green"
             nummer = 0;
         }
     }
