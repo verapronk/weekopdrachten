@@ -2,15 +2,27 @@
     var prijzen = [2, 1.5, 3, 4.5, 1];
     var totaal = [];
 
-    function getSum(total, num) {
-        return total + Math.round(num);
-    }
 
+    function count(x){
+        var y = 0
+        for (var i = 0; i < x.length; i++) {
+            y = y + x[i]
+        }
+        return(y)
+    }
+    count(totaal)
+  
+/*
+    function getSum(total, num) {
+        return total + Math.round(num);  //totaal.reduce(getSum, 0);
+    }
+*/
     function optellen(prijs) {
         totaal.push(prijzen[prijs]);
-        document.getElementById("totaaldiv").innerHTML = "€ " + totaal.reduce(getSum, 0);
+        document.getElementById("totaaldiv").innerHTML = "€ " + count(totaal);
         console.log(totaal);
     }
+    
 </script>
 
 <style>

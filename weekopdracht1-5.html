@@ -1,0 +1,41 @@
+<script>
+    var kleuren = ["green", "orange", "red"];
+    var nummer = 0;
+    
+    function volgende() {
+        var cirkel = document.getElementById("cirkel");
+        cirkel.style.backgroundColor = kleuren[nummer]
+        nummer = nummer + 1;
+        console.log(nummer);
+
+        if(nummer > 2){
+            nummer = 0;
+        }
+    }
+</script>
+
+<style>
+    h1 {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: medium;
+    }
+
+    #cirkel {
+        height: 150px;
+        width: 150px;
+        border-radius: 50%;
+    }
+
+    #volgende {
+        padding: 8px;
+        margin-top: 25px;
+        border-radius: 3px;
+    }
+</style>
+
+<h1>Stoplicht</h1>
+<br>
+<br>
+
+<div id="cirkel"> </div>
+<input type=button id="volgende" onclick="volgende()" value="volgende">

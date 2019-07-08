@@ -1,0 +1,47 @@
+<script>
+    var oefeningen = ["deadlift", "sit-up", "pull-up"]
+    var sets = [1, 2, 3, 4, 5]
+    var reps = [5, 8, 10, 12]
+
+function setGround() {      // ken variabelen maar 1 keer toe bij het laden vd pagina
+    var workout = document.getElementById("workout");
+}
+document.onload = setGround();
+
+/* ----------------------------------------------------------------------------------- */
+
+function geefRandom(x){     // geef een random waarde van "een" array
+    var y = Math.floor(Math.random() * x.length);
+    return x[y];
+}
+
+function geefOefening() {   // geef random waarde uit de array "oefeningen"
+    workout.innerHTML = workout.innerHTML + geefRandom(oefeningen);
+    console.log(geefRandom(oefeningen));
+    }
+
+function geefSets(){        // geef random waarde uit de array "sets"
+    workout.innerHTML = workout.innerHTML + " - " + geefRandom(sets) +" sets";
+    console.log(geefRandom(sets));
+}
+
+function geefReps(){        // geef random waarde uit de array "reps"
+    workout.innerHTML = workout.innerHTML + " - " + geefRandom(reps) +" reps" + "<br>";
+    console.log(geefRandom(reps));
+}
+</script>
+
+<style>
+    h1 {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: medium;
+    }
+</style>
+
+<h1>Genereer workout</h1><br>
+<input type=button id="oefeningen" onclick="geefOefening()" value="oefeningen">
+<input type=button id="sets" onclick="geefSets()" value="sets">
+<input type=button id="reps" onclick="geefReps()" value="reps">
+<br>
+<hr><br>
+<div id="workout"> <strong>Dit wordt je workout!</strong><br> </div>
