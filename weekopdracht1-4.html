@@ -12,14 +12,12 @@
         return(y)
     } 
     
-/*
-    function getSum(total, num) {
-        return total + Math.round(num);  //totaal.reduce(getSum, 0);
-    }
-*/
-    function optellen(prijs) {
-        totaal.push(prijzen[prijs]);
-        document.getElementById("totaaldiv").innerHTML = "€ " + count(totaal);
+    function optellen(productprijs) {
+        // push de prijs van 1 product naar de lege array "totaal"
+        totaal.push(prijzen[productprijs]); 
+        
+        // tel alle waarden uit de array "totaal" bij elkaar op en print deze
+        document.getElementById("totaaldiv").innerHTML = "€ " + count(totaal); 
         console.log(totaal);
     }
 </script>
