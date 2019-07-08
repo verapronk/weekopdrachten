@@ -3,45 +3,91 @@
     var sets = [1, 2, 3, 4, 5]
     var reps = [5, 8, 10, 12]
 
-function setGround() {      // ken variabelen maar 1 keer toe bij het laden vd pagina
-    var workout = document.getElementById("workout");
-}
-document.onload = setGround();
+    function setGround() {      // ken variabelen maar 1 keer toe bij het laden vd pagina
+        var workout = document.getElementById("workout");
+    }
+    document.onload = setGround();
 
-/* ----------------------------------------------------------------------------------- */
+    /* ----------------------------------------------------------------------------------- */
 
-function geefRandom(x){     // geef een random waarde van "een" array
-    var y = Math.floor(Math.random() * x.length);
-    return x[y];
-}
-
-function geefOefening() {   // geef random waarde uit de array "oefeningen"
-    workout.innerHTML = workout.innerHTML + geefRandom(oefeningen);
-    console.log(geefRandom(oefeningen));
+    function geefRandom(x) {     // geef een random waarde van "een" array
+        var y = Math.floor(Math.random() * x.length);
+        return x[y];
     }
 
-function geefSets(){        // geef random waarde uit de array "sets"
-    workout.innerHTML = workout.innerHTML + " - " + geefRandom(sets) +" sets";
-    console.log(geefRandom(sets));
-}
+    function geefOefening() {   // geef random waarde uit de array "oefeningen"
+        workout.innerHTML = workout.innerHTML + geefRandom(oefeningen);
+        console.log(geefRandom(oefeningen));
+    }
 
-function geefReps(){        // geef random waarde uit de array "reps"
-    workout.innerHTML = workout.innerHTML + " - " + geefRandom(reps) +" reps" + "<br>";
-    console.log(geefRandom(reps));
-}
+    function geefSets() {        // geef random waarde uit de array "sets"
+        workout.innerHTML = workout.innerHTML + " - " + geefRandom(sets) + " sets";
+        console.log(geefRandom(sets));
+    }
+
+    function geefReps() {        // geef random waarde uit de array "reps"
+        workout.innerHTML = workout.innerHTML + " - " + geefRandom(reps) + " reps" + "<br>";
+        console.log(geefRandom(reps));
+    }
 </script>
 
 <style>
+    @font-face {
+        font-family: "Playfair";
+        src: url("fonts/PlayfairDisplay-black.ttf");
+    }
+
+    @font-face {
+        font-family: "Karla";
+        src: url("fonts/Karla-Bold.ttf");
+    }
+
     h1 {
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-        font-size: medium;
+        font-family: "Playfair";
+        font-size: 35px;
+        color: #FFBF55;
+    }
+
+    h2 {
+        font-family: "Playfair";
+        font-size: 35px;
+        color: rgb(1, 39, 33);
+    }
+
+    #wrapper {
+        width: 350px;
+        height: 300px;
+        padding-top: 10px;
+        text-align: center;
+        background-color: rgb(1, 39, 33);
+    }
+
+    #genereren {
+        padding-top: 5px;
+        padding-bottom: 25px;
+    }
+
+    #workout {
+        padding-top: 25px;
+        background-color: #FFBF55;
+        font-family: "Karla";
+        font-size: 20px;
+        color: rgb(1, 39, 33);
+        height: inherit;
     }
 </style>
 
-<h1>Genereer workout</h1><br>
-<input type=button id="oefeningen" onclick="geefOefening()" value="oefeningen">
-<input type=button id="sets" onclick="geefSets()" value="sets">
-<input type=button id="reps" onclick="geefReps()" value="reps">
-<br>
-<hr><br>
-<div id="workout"> <strong>Dit wordt je workout!</strong><br> </div>
+<div id="wrapper">
+    <h1>Genereer<br>Workout</h1><br>
+
+    <div id="workout">
+        <h2>Go!</h2><br>
+        <input type=button id="oefeningen" onclick="geefOefening()" value="oefeningen">
+        <input type=button id="sets" onclick="geefSets()" value="sets">
+        <input type=button id="reps" onclick="geefReps()" value="reps">
+        <br><br>
+    </div>
+
+
+
+</div>
