@@ -10,8 +10,17 @@
 
         if (spelerkleur == groen) {
             spelerkleur = blauw
-        } else spelerkleur = groen
+        } else spelerkleur = groen 
     }
+
+    function restart(){
+        var cellen = document.getElementsByTagName("td")
+
+        for (var i=0; i<cellen.length; i++){
+            cellen[i].style.backgroundColor= "rgb(240,240,240)"
+        }
+    }
+
 </script>
 
 <style>
@@ -29,12 +38,16 @@
     }
 
     td:hover {
-        background-color: rgb(255, 255, 255);
+
+        background-color: rgb(255, 255, 255) !important;
+        
     }
 </style>
 
 <div id="speelveld">
-    <table>
+    <input type=button onclick="restart()">
+
+    <table id="table">
         <tr>
             <td id="a1" onclick="cellClick(this.id)"> </td>
             <td id="b1" onclick="cellClick(this.id)"> </td>
