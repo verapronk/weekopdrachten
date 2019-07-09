@@ -3,31 +3,80 @@
     var blauw = "#3A5195"
     var spelerkleur = groen
 
-    function cellClick(xId) {
-        //alert(xId);                    // haalt het cell id op
-        var cellKleur = document.getElementById(xId);
-        cellKleur.style.backgroundColor = spelerkleur;
+    /*
+    function dropCoin(x) {
+            var ditvakje = document.getElementById(x);
+            alert(ditvakje.id)
+
+            var cellKleur = document.getElementById(xId);
+            cellKleur.style.backgroundColor = spelerkleur;
+
+            if (spelerkleur == groen) {
+                spelerkleur = blauw
+            } else spelerkleur = groen
+        }
+    */
+    
+    function dropCoin(col) {                                    // haal met "this.id" het id van het vakje op (bv. "a1")
+        col = col.substring(0, 1);                              // pak van "this.id" alleen het eerste character (a t/m g = kolom)
+
+        var rij1 = document.getElementById(col.concat(1))       // concateneer bij de kolomletter weer de cijfers 1 t/m 6
+        var rij2 = document.getElementById(col.concat(2))       // daardoor wordt bv "b.concat(2)", weer "b2". Waardoor de variabele weer het id "b2" gaat opzoeken
+        var rij3 = document.getElementById(col.concat(3))
+        var rij4 = document.getElementById(col.concat(4))
+        var rij5 = document.getElementById(col.concat(5))
+        var rij6 = document.getElementById(col.concat(6))
+
+        var kolomA = [rij6, rij5, rij4, rij3, rij2, rij1]       // zet de rijen als variabelen in een array. Begin met loopen door de onderste rij.
+
+        for (var i = 0; i < kolomA.length; i++) {               // loop door de lengte van de array
+            console.log(kolomA[i].style.backgroundColor);       // de bgColor blijkt blanco te zijn
+
+            if (kolomA[i].style.backgroundColor == '') {        // als de bgColor blanco is, wordt "spelerkleur"
+                kolomA[i].style.backgroundColor = spelerkleur
+                break                                           // stop met loopen = stop met kleuren van de vakjes in bovenstaande rijen.
+            }                                                   // bij de volgende klik is de onderste rij niet meer blanco, maar die daarboven wel. 
+            console.log("log kolomA[i]: " + spelerkleur)
+        }
 
         if (spelerkleur == groen) {
             spelerkleur = blauw
-        } else spelerkleur = groen 
+        } else spelerkleur = groen
     }
 
-    function restart(){
+    function restart() {
         var cellen = document.getElementsByTagName("td")
-
-        for (var i=0; i<cellen.length; i++){
-            cellen[i].style.backgroundColor= "rgb(240,240,240)"
+        for (var i = 0; i < cellen.length; i++) {
+            cellen[i].style.backgroundColor = null
         }
     }
 
 </script>
 
 <style>
+    @font-face {
+        font-family: "Karla";
+        src: url("fonts/Karla-Bold.ttf");
+    }
+
+    h1 {
+        font-family: "Karla";
+        font-size: 35px;
+        color: #FFBF55;
+    }
+
+    #speelveld {
+        position: fixed;
+        left: 10%;
+        top: 10%;
+        transform: translate(-10%, -10%);
+        text-align: center;
+    }
+
     table,
     tr,
     td {
-        background-color: rgb(240,240,240);
+        background-color: rgb(240, 240, 240);
         border: 1px solid rgb(180, 180, 180);
         border-collapse: collapse;
     }
@@ -38,69 +87,71 @@
     }
 
     td:hover {
-
-        background-color: rgb(255, 255, 255) !important;
-        
+        background-color: white !important;
     }
 </style>
 
-<div id="speelveld">
-    <input type=button onclick="restart()">
+<div id="wrapper">
+    <div id="speelveld">
+        <h1>Speel 4-op-een-rij</h1>
+        <table id="table">
+            <tr id="rij1">
+                <td id="a1" onclick="dropCoin(this.id)"> </td>
+                <td id="b1" onclick="dropCoin(this.id)"> </td>
+                <td id="c1" onclick="dropCoin(this.id)"> </td>
+                <td id="d1" onclick="dropCoin(this.id)"> </td>
+                <td id="e1" onclick="dropCoin(this.id)"> </td>
+                <td id="f1" onclick="dropCoin(this.id)"> </td>
+                <td id="g1" onclick="dropCoin(this.id)"> </td>
+            </tr>
+            <tr id="rij2">
+                <td id="a2" onclick="dropCoin(this.id)"> </td>
+                <td id="b2" onclick="dropCoin(this.id)"> </td>
+                <td id="c2" onclick="dropCoin(this.id)"> </td>
+                <td id="d2" onclick="dropCoin(this.id)"> </td>
+                <td id="e2" onclick="dropCoin(this.id)"> </td>
+                <td id="f2" onclick="dropCoin(this.id)"> </td>
+                <td id="g2" onclick="dropCoin(this.id)"> </td>
+            </tr>
+            <tr id="rij3">
+                <td id="a3" onclick="dropCoin(this.id)"> </td>
+                <td id="b3" onclick="dropCoin(this.id)"> </td>
+                <td id="c3" onclick="dropCoin(this.id)"> </td>
+                <td id="d3" onclick="dropCoin(this.id)"> </td>
+                <td id="e3" onclick="dropCoin(this.id)"> </td>
+                <td id="f3" onclick="dropCoin(this.id)"> </td>
+                <td id="g3" onclick="dropCoin(this.id)"> </td>
+            </tr>
+            <tr id="rij4">
+                <td id="a4" onclick="dropCoin(this.id)"> </td>
+                <td id="b4" onclick="dropCoin(this.id)"> </td>
+                <td id="c4" onclick="dropCoin(this.id)"> </td>
+                <td id="d4" onclick="dropCoin(this.id)"> </td>
+                <td id="e4" onclick="dropCoin(this.id)"> </td>
+                <td id="f4" onclick="dropCoin(this.id)"> </td>
+                <td id="g4" onclick="dropCoin(this.id)"> </td>
+            </tr>
+            <tr id="rij5">
+                <td id="a5" onclick="dropCoin(this.id)"> </td>
+                <td id="b5" onclick="dropCoin(this.id)"> </td>
+                <td id="c5" onclick="dropCoin(this.id)"> </td>
+                <td id="d5" onclick="dropCoin(this.id)"> </td>
+                <td id="e5" onclick="dropCoin(this.id)"> </td>
+                <td id="f5" onclick="dropCoin(this.id)"> </td>
+                <td id="g5" onclick="dropCoin(this.id)"> </td>
+            </tr>
+            <tr id="rij6">
+                <td id="a6" onclick="dropCoin(this.id)"> </td>
+                <td id="b6" onclick="dropCoin(this.id)"> </td>
+                <td id="c6" onclick="dropCoin(this.id)"> </td>
+                <td id="d6" onclick="dropCoin(this.id)"> </td>
+                <td id="e6" onclick="dropCoin(this.id)"> </td>
+                <td id="f6" onclick="dropCoin(this.id)"> </td>
+                <td id="g6" onclick="dropCoin(this.id)"> </td>
+            </tr>
+        </table>
+        <br><br>
+        <input type=button onclick="restart()" value="opnieuw!">
+    </div>
 
-    <table id="table">
-        <tr>
-            <td id="a1" onclick="cellClick(this.id)"> </td>
-            <td id="b1" onclick="cellClick(this.id)"> </td>
-            <td id="c1" onclick="cellClick(this.id)"> </td>
-            <td id="d1" onclick="cellClick(this.id)"> </td>
-            <td id="e1" onclick="cellClick(this.id)"> </td>
-            <td id="f1" onclick="cellClick(this.id)"> </td>
-            <td id="g1" onclick="cellClick(this.id)"> </td>
-        </tr>
-        <tr>
-            <td id="a2" onclick="cellClick(this.id)"> </td>
-            <td id="b2" onclick="cellClick(this.id)"> </td>
-            <td id="c2" onclick="cellClick(this.id)"> </td>
-            <td id="d2" onclick="cellClick(this.id)"> </td>
-            <td id="e2" onclick="cellClick(this.id)"> </td>
-            <td id="f2" onclick="cellClick(this.id)"> </td>
-            <td id="g2" onclick="cellClick(this.id)"> </td>
-        </tr>
-        <tr>
-            <td id="a3" onclick="cellClick(this.id)"> </td>
-            <td id="b3" onclick="cellClick(this.id)"> </td>
-            <td id="c3" onclick="cellClick(this.id)"> </td>
-            <td id="d3" onclick="cellClick(this.id)"> </td>
-            <td id="e3" onclick="cellClick(this.id)"> </td>
-            <td id="f3" onclick="cellClick(this.id)"> </td>
-            <td id="g3" onclick="cellClick(this.id)"> </td>
-        </tr>
-        <tr>
-            <td id="a4" onclick="cellClick(this.id)"> </td>
-            <td id="b4" onclick="cellClick(this.id)"> </td>
-            <td id="c4" onclick="cellClick(this.id)"> </td>
-            <td id="d4" onclick="cellClick(this.id)"> </td>
-            <td id="e4" onclick="cellClick(this.id)"> </td>
-            <td id="f4" onclick="cellClick(this.id)"> </td>
-            <td id="g4" onclick="cellClick(this.id)"> </td>
-        </tr>
-        <tr>
-            <td id="a5" onclick="cellClick(this.id)"> </td>
-            <td id="b5" onclick="cellClick(this.id)"> </td>
-            <td id="c5" onclick="cellClick(this.id)"> </td>
-            <td id="d5" onclick="cellClick(this.id)"> </td>
-            <td id="e5" onclick="cellClick(this.id)"> </td>
-            <td id="f5" onclick="cellClick(this.id)"> </td>
-            <td id="g5" onclick="cellClick(this.id)"> </td>
-        </tr>
-        <tr>
-            <td id="a6" onclick="cellClick(this.id)"> </td>
-            <td id="b6" onclick="cellClick(this.id)"> </td>
-            <td id="c6" onclick="cellClick(this.id)"> </td>
-            <td id="d6" onclick="cellClick(this.id)"> </td>
-            <td id="e6" onclick="cellClick(this.id)"> </td>
-            <td id="f6" onclick="cellClick(this.id)"> </td>
-            <td id="g6" onclick="cellClick(this.id)"> </td>
-        </tr>
-    </table>
 </div>
