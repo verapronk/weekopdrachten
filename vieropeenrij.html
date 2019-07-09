@@ -16,18 +16,21 @@
         var kolomA = [rij6, rij5, rij4, rij3, rij2, rij1]       // zet de rijen als variabelen in een array. Begin met loopen door de onderste rij.
 
         for (var i = 0; i < kolomA.length; i++) {               // loop door de lengte van de array
-            console.log(kolomA[i].style.backgroundColor);       // de bgColor blijkt blanco te zijn
+            //console.log(kolomA[i].style.backgroundColor);       // de bgColor blijkt blanco te zijn
 
             if (kolomA[i].style.backgroundColor == '') {        // als de bgColor blanco is, wordt "spelerkleur"
                 kolomA[i].style.backgroundColor = spelerkleur
                 break                                           // stop met loopen = stop met kleuren van de vakjes in bovenstaande rijen.
             }                                                   // bij de volgende klik is de onderste rij niet meer blanco, maar die daarboven wel. 
-            console.log("log kolomA[i]: " + spelerkleur)
         }
 
+        var spelermsg = document.getElementById("spelerADB")
         if (spelerkleur == groen) {
-            spelerkleur = blauw
-        } else spelerkleur = groen
+            spelerkleur = blauw;
+            spelermsg.innerHTML = "speler 2 is aan de beurt!";
+        } else spelerkleur = groen;
+        spelermsg.innerHTML = "speler 1 is aan de beurt!";
+        
     }
 
     function restart() {
@@ -36,7 +39,6 @@
             cellen[i].style.backgroundColor = null
         }
     }
-
 </script>
 
 <style>
@@ -80,6 +82,7 @@
 <div id="wrapper">
     <div id="speelveld">
         <h1>Speel 4-op-een-rij</h1>
+        <div id="spelerADB">-Wie is er aan de beurt?-</div><br><br>
         <table id="table">
             <tr id="rij1">
                 <td id="a1" onclick="dropCoin(this.id)"> </td>
