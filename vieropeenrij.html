@@ -3,20 +3,6 @@
     var blauw = "#3A5195"
     var spelerkleur = groen
 
-    /*
-    function dropCoin(x) {
-            var ditvakje = document.getElementById(x);
-            alert(ditvakje.id)
-
-            var cellKleur = document.getElementById(xId);
-            cellKleur.style.backgroundColor = spelerkleur;
-
-            if (spelerkleur == groen) {
-                spelerkleur = blauw
-            } else spelerkleur = groen
-        }
-    */
-    
     function dropCoin(col) {                                    // haal met "this.id" het id van het vakje op (bv. "a1")
         col = col.substring(0, 1);                              // pak van "this.id" alleen het eerste character (a t/m g = kolom)
 
