@@ -7,48 +7,47 @@
 
 
         function check() {
-            function check() {
-                // dit zijn de goede antwoorden
-                var antwoord1 = document.getElementById("antwoord1");
-                var antwoord2 = document.getElementById("antwoord2");
-                var antwoord3 = document.getElementById("antwoord3");
-                var antwoord4 = document.getElementById("antwoord4");
+            // dit zijn de goede antwoorden
+            var antwoord1 = document.getElementById("antwoord1");
+            var antwoord2 = document.getElementById("antwoord2");
+            var antwoord3 = document.getElementById("antwoord3");
+            var antwoord4 = document.getElementById("antwoord4");
 
-                // div waarin "gewonnen" of "verloren" komt te staan
-                var gewonnen = document.getElementById("deDiv");
-
-                if (antwoord1.checked) {
-                    score = score + 1;
-                    console.log(score)
-                }
-                if (antwoord2.checked) {
-                    score = score + 1;
-                    console.log(score)
-                }
-                if (antwoord3.checked) {
-                    score = score + 1;
-                    console.log(score)
-                }
-                if (antwoord4.checked) {
-                    score = score + 1;
-                    console.log(score)
-                }
-                if (score == 4) {
-                    gewonnen.innerHTML = "gewonnen!"
-                }
-
-            }
-
-
+            // div waarin "gewonnen" of "verloren" komt te staan
             var gewonnen = document.getElementById("deDiv");
 
-            if (score == 4) {
-                gewonnen.innerHTML = "Gewonnen!";
-                gewonnen.style.borderColor = "green";
-            } else {
-                gewonnen.innerHTML = "Verloren!";
-                gewonnen.style.borderColor = "red";
+            if (antwoord1.checked) {
+                score = score + 1;
+                console.log(score)
             }
+            if (antwoord2.checked) {
+                score = score + 1;
+                console.log(score)
+            }
+            if (antwoord3.checked) {
+                score = score + 1;
+                console.log(score)
+            }
+            if (antwoord4.checked) {
+                score = score + 1;
+                console.log(score)
+            }
+            if (score == 4) {
+                gewonnen.innerHTML = "gewonnen!"
+            }
+
+        }
+
+
+        var gewonnen = document.getElementById("deDiv");
+
+        if (score == 4) {
+            gewonnen.innerHTML = "Gewonnen!";
+            gewonnen.style.borderColor = "green";
+        } else {
+            gewonnen.innerHTML = "Verloren!";
+            gewonnen.style.borderColor = "red";
+        }
         }
     </script>
 
@@ -65,28 +64,28 @@
     <h1>Quizzzje</h1>
     <br>
     1. ...?<br><br>
-    <input type="checkbox" id="goed1" onclick="tellen(this)"> goed antwoord <br>
+    <input type="checkbox" id="goed1"> goed antwoord <br>
     <input type="checkbox"> fout <br>
     <input type="checkbox"> fout <br>
     <input type="checkbox"> fout
     <hr>
 
     2. ...?<br><br>
-    <input type="checkbox" id="goed2" onclick="tellen(this)"> goed antwoord <br>
+    <input type="checkbox" id="goed2"> goed antwoord <br>
     <input type="checkbox"> fout <br>
     <input type="checkbox"> fout <br>
     <input type="checkbox"> fout
     <hr>
 
     3. ...?<br><br>
-    <input type="checkbox" id="goed3" onclick="tellen(this)"> goed antwoord <br>
+    <input type="checkbox" id="goed3"> goed antwoord <br>
     <input type="checkbox"> fout <br>
     <input type="checkbox"> fout <br>
     <input type="checkbox"> fout
     <hr>
 
     4. ...?<br><br>
-    <input type="checkbox" id="goed4" onclick="tellen(this)"> goed antwoord <br>
+    <input type="checkbox" id="goed4"> goed antwoord <br>
     <input type="checkbox"> fout <br>
     <input type="checkbox"> fout <br>
     <input type="checkbox"> fout
