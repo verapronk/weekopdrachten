@@ -2,19 +2,23 @@
 
 <head>
     <script>
+        // de begin score is 0
         var score = 0
 
         function check(){
-            var antwoord1 = document.getElementById("antwoord1");
-            var antwoord2 = document.getElementById("antwoord2");
-            var antwoord3 = document.getElementById("antwoord3");
-            var antwoord4 = document.getElementById("antwoord4");
+            // dit zijn de goede antwoorden
+            var antwoord1 = document.getElementById("goed1");
+            var antwoord2 = document.getElementById("goed2");
+            var antwoord3 = document.getElementById("goed3");
+            var antwoord4 = document.getElementById("goed4");
 
+            // dit is het het divje waar "gewonnen" of "verloren" in komt te staan
             var gewonnen = document.getElementById("deDiv");
 
+            // bij ieder goed antwoord wordt er -steeds- "1" opgetelt bij de vorige score
             if (antwoord1.checked){
                 score = score +1;
-                console.log(score)
+                console.log(score)     
             }
 
             if (antwoord2.checked){
@@ -32,8 +36,14 @@
                 console.log(score)
             }
 
+            // als alle goede antwoorden zijn gegeven is de score 4,
+            // in dat geval, print "gewonnen!", anders print "verloren!"
             if (score == 4){
-                gewonnen.innerHTML = "gewonnen!"
+                gewonnen.innerHTML = "Gewonnen!";
+                gewonnen.style.borderColor = "green";
+            } else{
+                gewonnen.innerHTML = "Verloren!";
+                gewonnen.style.borderColor = "red";
             }
            
         }
@@ -42,7 +52,8 @@
     <style>
         div{
             margin-top: 25px;
-            border: 1px solid green;
+            padding: 10px;
+            border: 3px solid blue;
         }
     </style>
 </head>
@@ -50,35 +61,31 @@
 <body>
     <h1>Quizzzje</h1>
     <br>
-    <h2>Vraag 1</h2>
-    ...?<br><br>
-    <input type="checkbox" id="antwoord1"> goed antwoord <br>
-    <input type="checkbox"> antwoord 1 <br>
-    <input type="checkbox"> antwoord 1 <br>
-    <input type="checkbox"> antwoord 1 <hr>
+    1. ...?<br><br>
+    <input type="checkbox" id="goed1"> goed antwoord <br>
+    <input type="checkbox"> fout <br>
+    <input type="checkbox"> fout <br>
+    <input type="checkbox"> fout <hr>
 
-    <h2>Vraag 2</h2>
-    ...?<br><br>
-    <input type="checkbox" id="antwoord2"> goed antwoord <br>
-    <input type="checkbox"> antwoord 1 <br>
-    <input type="checkbox"> antwoord 1 <br>
-    <input type="checkbox"> antwoord 1 <hr>
+    2. ...?<br><br>
+    <input type="checkbox" id="goed2"> goed antwoord <br>
+    <input type="checkbox"> fout <br>
+    <input type="checkbox"> fout <br>
+    <input type="checkbox"> fout <hr>
 
-    <h2>Vraag 3</h2>
-    ...?<br><br>
-    <input type="checkbox" id="antwoord3"> goed antwoord <br>
-    <input type="checkbox"> antwoord 1 <br>
-    <input type="checkbox"> antwoord 1 <br>
-    <input type="checkbox"> antwoord 1 <hr>
+    3. ...?<br><br>
+    <input type="checkbox" id="goed3"> goed antwoord <br>
+    <input type="checkbox"> fout <br>
+    <input type="checkbox"> fout <br>
+    <input type="checkbox"> fout <hr>
 
-    <h2>Vraag 4</h2>
-    ...?<br><br>
-    <input type="checkbox" id="antwoord4"> goed antwoord <br>
-    <input type="checkbox"> antwoord 1 <br>
-    <input type="checkbox"> antwoord 1 <br>
-    <input type="checkbox"> antwoord 1 <hr>
+    4. ...?<br><br>
+    <input type="checkbox" id="goed4"> goed antwoord <br>
+    <input type="checkbox"> fout <br>
+    <input type="checkbox"> fout <br>
+    <input type="checkbox"> fout <hr>
 
     <input type=button onclick="check()" value="check score!">
-    <div id="deDiv"> ... </div>
+    <div id="deDiv"> Heb je gewonnen? </div>
 </body>
 </html>
