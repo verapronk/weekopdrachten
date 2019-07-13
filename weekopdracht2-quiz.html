@@ -5,13 +5,12 @@
         // de begin score is 0
         var score = 0
 
-
         function check() {
             // dit zijn de goede antwoorden
-            var antwoord1 = document.getElementById("antwoord1");
-            var antwoord2 = document.getElementById("antwoord2");
-            var antwoord3 = document.getElementById("antwoord3");
-            var antwoord4 = document.getElementById("antwoord4");
+            var antwoord1 = document.getElementById("goed1");
+            var antwoord2 = document.getElementById("goed2");
+            var antwoord3 = document.getElementById("goed3");
+            var antwoord4 = document.getElementById("goed4");
 
             // div waarin "gewonnen" of "verloren" komt te staan
             var gewonnen = document.getElementById("deDiv");
@@ -32,22 +31,17 @@
                 score = score + 1;
                 console.log(score)
             }
+
+
+            var gewonnen = document.getElementById("deDiv");
+
             if (score == 4) {
-                gewonnen.innerHTML = "gewonnen!"
+                gewonnen.innerHTML = "Gewonnen!";
+                gewonnen.style.borderColor = "green";
+            } else {
+                gewonnen.innerHTML = "Verloren!";
+                gewonnen.style.borderColor = "red";
             }
-
-        }
-
-
-        var gewonnen = document.getElementById("deDiv");
-
-        if (score == 4) {
-            gewonnen.innerHTML = "Gewonnen!";
-            gewonnen.style.borderColor = "green";
-        } else {
-            gewonnen.innerHTML = "Verloren!";
-            gewonnen.style.borderColor = "red";
-        }
         }
     </script>
 
