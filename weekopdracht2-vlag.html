@@ -10,7 +10,34 @@
         var groen = "green";
         var geel = "yellow";
 
-        // ik maak een functie aan die de banen bij zijn id ophaalt, zodat ik dat maar 1 keer hoef te doen.
+        function vlagKleuren(x) {           // iedere knop geeft zijn eigen id mee. Dus "x" wordt bijv. "nederland", omdat het id van een knop "nederland" is.
+            getBanen();                     // haal banen op
+
+            switch (x) {                    // deze "x" haalt zijn waarde uit vlagKleuren(x), dus "nederland"
+                case "nederland":
+                    nederland();            // als x == "nederland" voer nederland() uit.
+                    break;
+
+                case "duitsland":           // als x == "duitsland" voer duitsland() uit.
+                    duitsland();
+                    break;
+
+                case "bolivia":
+                    bolivia();
+                    break;
+
+
+                case "armenie":
+                    armenie();
+                    break;
+
+                case "litouwen":
+                    litouwen();
+                    break;
+            }
+        }
+
+        // ik maak een functie aan die de banen byId ophaalt, zodat ik dat maar 1 keer hoef te doen.
         function getBanen() {
             var baan1 = document.getElementById("baan1");
             var baan2 = document.getElementById("baan2");
@@ -19,35 +46,30 @@
 
         // zo wordt het toekennen van kleuren aan banen makkelijker.
         function nederland() {
-            getBanen();
             baan1.style.backgroundColor = rood;
             baan2.style.backgroundColor = wit;
             baan3.style.backgroundColor = blauw;
         }
 
         function duitsland() {
-            getBanen();
             baan1.style.backgroundColor = zwart;
             baan2.style.backgroundColor = rood;
             baan3.style.backgroundColor = geel;
         }
 
         function bolivia() {
-            getBanen();
             baan1.style.backgroundColor = rood;
             baan2.style.backgroundColor = geel;
             baan3.style.backgroundColor = groen;
         }
 
         function armenie() {
-            getBanen();
             baan1.style.backgroundColor = rood;
             baan2.style.backgroundColor = blauw;
             baan3.style.backgroundColor = geel;
         }
 
         function litouwen() {
-            getBanen();
             baan1.style.backgroundColor = geel;
             baan2.style.backgroundColor = groen;
             baan3.style.backgroundColor = rood;
@@ -65,15 +87,15 @@
 
 <body>
     <br><br>
-    <input id="nederland" type=button onclick="nederland()" value="Nederland">
+    <input id="nederland" type=button onclick="nederland(this.id)" value="Nederland">
     <!--rood wit blauw-->
-    <input id="duitsland" type=button onclick="duitsland()" value="Duitsland">
+    <input id="duitsland" type=button onclick="duitsland(this.id)" value="Duitsland">
     <!--zwart rood geel-->
-    <input id="bolivia" type=button onclick="bolivia()" value="Bolivia">
+    <input id="bolivia" type=button onclick="bolivia(this.id)" value="Bolivia">
     <!--rood geel groen-->
-    <input id="armenie" type=button onclick="armenie()" value="Armenie">
+    <input id="armenie" type=button onclick="armenie(this.id)" value="Armenie">
     <!--rood blauw geel-->
-    <input id="litouwen" type=button onclick="litouwen()" value="Litouwen">
+    <input id="litouwen" type=button onclick="litouwen(this.id)" value="Litouwen">
     <!--geel groen rood -->
     <br><br>
     <input type=button onclick="random()" value="Random!">
