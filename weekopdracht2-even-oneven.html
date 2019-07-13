@@ -1,0 +1,51 @@
+<html>
+
+<head>
+    <script>
+        function check() {
+            var input = document.getElementById("invoerveld");
+            var boxEven = document.getElementById("even");
+            var boxOneven = document.getElementById("oneven");
+
+            if (input.value %2 == 0){
+                boxEven.innerHTML = boxEven.innerHTML + "<br>" + input.value;
+            } else {
+                boxOneven.innerHTML = boxOneven.innerHTML + "<br>" + input.value;
+            }
+        }
+    </script>
+
+    <style>
+        #even,
+        #oneven {
+            width: 200px;
+            height: 200px;
+            margin-top: 25px;
+            padding: 25px;
+            display:inline-flex;
+            position:initial;
+        }
+
+        #even{
+            border: 2px solid orange;
+        }
+
+        #oneven{
+            border: 2px solid rgb(86, 86, 255);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Even of oneven?</h1>
+    <input id="invoerveld" type="text" placeholder="type een getal">
+    <input type="button" onclick="check()" value="check">
+    <div>
+        <div id="even"> <strong>Even getallen</strong><br></div>
+        <div id="oneven"> <strong>Oneven getallen</strong><br></div>
+    </div>
+
+
+</body>
+
+</html>
