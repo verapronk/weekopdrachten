@@ -3,12 +3,11 @@
 <head>
     <script>
         // kleuren heb ik altijd nodig, dus buiten de scope van functies.
-        var wit = "white";
-        var zwart = "black";
-        var rood = "red";
-        var blauw = "blue";
-        var groen = "green";
-        var geel = "yellow";
+        var ned = ["red", "white", "blue"];
+        var dui = ["black", "red", "yellow"];
+        var bol = ["red", "yellow", "green"];
+        var arm = ["red", "blue", "yellow"];
+        var lit = ["yellow", "green", "red"];
 
         function vlagKleuren(x) {           // iedere knop geeft zijn eigen id mee. Dus "x" wordt bijv. "nederland", omdat het id van een knop "nederland" is.
             getBanen();                     // haal banen op
@@ -26,7 +25,6 @@
                     bolivia();
                     break;
 
-
                 case "armenie":
                     armenie();
                     break;
@@ -35,6 +33,17 @@
                     litouwen();
                     break;
             }
+        }
+
+        function randomVlag() {
+            getBanen();
+            var randomVlag = [ned, dui, bol, arm, lit];
+            var keuze = Math.floor(Math.random() * randomVlag.length);
+
+            baan1.style.backgroundColor = randomVlag[keuze][0];
+            baan2.style.backgroundColor = randomVlag[keuze][1];
+            baan3.style.backgroundColor = randomVlag[keuze][2];
+
         }
 
         // ik maak een functie aan die de banen byId ophaalt, zodat ik dat maar 1 keer hoef te doen.
@@ -46,33 +55,33 @@
 
         // zo wordt het toekennen van kleuren aan banen makkelijker.
         function nederland() {
-            baan1.style.backgroundColor = rood;
-            baan2.style.backgroundColor = wit;
-            baan3.style.backgroundColor = blauw;
+            baan1.style.backgroundColor = ned[0];
+            baan2.style.backgroundColor = ned[1];
+            baan3.style.backgroundColor = ned[2];
         }
 
         function duitsland() {
-            baan1.style.backgroundColor = zwart;
-            baan2.style.backgroundColor = rood;
-            baan3.style.backgroundColor = geel;
+            baan1.style.backgroundColor = dui[0];
+            baan2.style.backgroundColor = dui[1];
+            baan3.style.backgroundColor = dui[2];
         }
 
         function bolivia() {
-            baan1.style.backgroundColor = rood;
-            baan2.style.backgroundColor = geel;
-            baan3.style.backgroundColor = groen;
+            baan1.style.backgroundColor = bol[0];
+            baan2.style.backgroundColor = bol[1];
+            baan3.style.backgroundColor = bol[2];
         }
 
         function armenie() {
-            baan1.style.backgroundColor = rood;
-            baan2.style.backgroundColor = blauw;
-            baan3.style.backgroundColor = geel;
+            baan1.style.backgroundColor = arm[0];
+            baan2.style.backgroundColor = arm[1];
+            baan3.style.backgroundColor = arm[2];
         }
 
         function litouwen() {
-            baan1.style.backgroundColor = geel;
-            baan2.style.backgroundColor = groen;
-            baan3.style.backgroundColor = rood;
+            baan1.style.backgroundColor = lit[0];
+            baan2.style.backgroundColor = lit[1];
+            baan3.style.backgroundColor = lit[2];
         }
     </script>
 
@@ -87,18 +96,18 @@
 
 <body>
     <br><br>
-    <input id="nederland" type=button onclick="nederland(this.id)" value="Nederland">
+    <input id="nederland" type=button onclick="vlagKleuren(this.id)" value="Nederland">
     <!--rood wit blauw-->
-    <input id="duitsland" type=button onclick="duitsland(this.id)" value="Duitsland">
+    <input id="duitsland" type=button onclick="vlagKleuren(this.id)" value="Duitsland">
     <!--zwart rood geel-->
-    <input id="bolivia" type=button onclick="bolivia(this.id)" value="Bolivia">
+    <input id="bolivia" type=button onclick="vlagKleuren(this.id)" value="Bolivia">
     <!--rood geel groen-->
-    <input id="armenie" type=button onclick="armenie(this.id)" value="Armenie">
+    <input id="armenie" type=button onclick="vlagKleuren(this.id)" value="Armenie">
     <!--rood blauw geel-->
-    <input id="litouwen" type=button onclick="litouwen(this.id)" value="Litouwen">
+    <input id="litouwen" type=button onclick="vlagKleuren(this.id)" value="Litouwen">
     <!--geel groen rood -->
     <br><br>
-    <input type=button onclick="random()" value="Random!">
+    <input type=button onclick="randomVlag()" value="Random!">
     <br><br>
 
     <div id="deDiv"> </div>
