@@ -1,0 +1,171 @@
+<script>
+    var rood = "red";
+    var oranje = "orange";
+    var geel = "yellow";
+    var groen = "#9FC684"
+    var blauw = "#3A5195"
+    var paars = "purple"
+
+    var spelerkleur = rood
+    function cellClick(xId) {
+        //alert(xId);                    // haalt het cell id op
+        var cellKleur = document.getElementById(xId);
+        cellKleur.style.backgroundColor = spelerkleur;
+        if (spelerkleur == rood) {
+            spelerkleur = oranje
+        } else if (spelerkleur == oranje){
+            spelerkleur = geel
+        } else if (spelerkleur == geel){
+            spelerkleur = groen
+        } else if (spelerkleur == groen){
+            spelerkleur = blauw
+        } else if (spelerkleur == blauw){
+            spelerkleur = paars
+        } else if (spelerkleur == paars){
+            spelerkleur = rood
+        }
+    }
+</script>
+
+<style>
+    table,
+    tr,
+    td {
+        background-color: rgb(240, 240, 240);
+        border: 1px solid rgb(180, 180, 180);
+        border-collapse: collapse;
+    }
+
+    td {
+        height: 50px;
+        width: 50px;
+    }
+
+    td:hover {
+        background-color: rgb(255, 255, 255);
+    }
+</style>
+
+<div id="speelveld">
+    <table>
+        <tr>
+            <td id="a1" onmouseover="cellClick(this.id)"> </td>
+            <td id="b1" onmouseover="cellClick(this.id)"> </td>
+            <td id="c1" onmouseover="cellClick(this.id)"> </td>
+            <td id="d1" onmouseover="cellClick(this.id)"> </td>
+            <td id="e1" onmouseover="cellClick(this.id)"> </td>
+            <td id="f1" onmouseover="cellClick(this.id)"> </td>
+            <td id="g1" onmouseover="cellClick(this.id)"> </td>
+            <td id="h1" onmouseover="cellClick(this.id)"> </td>
+            <td id="i1" onmouseover="cellClick(this.id)"> </td>
+            <td id="j1" onmouseover="cellClick(this.id)"> </td>
+        </tr>
+        <tr>
+            <td id="a2" onmouseover="cellClick(this.id)"> </td>
+            <td id="b2" onmouseover="cellClick(this.id)"> </td>
+            <td id="c2" onmouseover="cellClick(this.id)"> </td>
+            <td id="d2" onmouseover="cellClick(this.id)"> </td>
+            <td id="e2" onmouseover="cellClick(this.id)"> </td>
+            <td id="f2" onmouseover="cellClick(this.id)"> </td>
+            <td id="g2" onmouseover="cellClick(this.id)"> </td>
+            <td id="h2" onmouseover="cellClick(this.id)"> </td>
+            <td id="i2" onmouseover="cellClick(this.id)"> </td>
+            <td id="j2" onmouseover="cellClick(this.id)"> </td>
+        </tr>
+        <tr>
+            <td id="a3" onmouseover="cellClick(this.id)"> </td>
+            <td id="b3" onmouseover="cellClick(this.id)"> </td>
+            <td id="c3" onmouseover="cellClick(this.id)"> </td>
+            <td id="d3" onmouseover="cellClick(this.id)"> </td>
+            <td id="e3" onmouseover="cellClick(this.id)"> </td>
+            <td id="f3" onmouseover="cellClick(this.id)"> </td>
+            <td id="g3" onmouseover="cellClick(this.id)"> </td>
+            <td id="h3" onmouseover="cellClick(this.id)"> </td>
+            <td id="i3" onmouseover="cellClick(this.id)"> </td>
+            <td id="j3" onmouseover="cellClick(this.id)"> </td>
+        </tr>
+        <tr>
+            <td id="a4" onmouseover="cellClick(this.id)"> </td>
+            <td id="b4" onmouseover="cellClick(this.id)"> </td>
+            <td id="c4" onmouseover="cellClick(this.id)"> </td>
+            <td id="d4" onmouseover="cellClick(this.id)"> </td>
+            <td id="e4" onmouseover="cellClick(this.id)"> </td>
+            <td id="f4" onmouseover="cellClick(this.id)"> </td>
+            <td id="g4" onmouseover="cellClick(this.id)"> </td>
+            <td id="h4" onmouseover="cellClick(this.id)"> </td>
+            <td id="i4" onmouseover="cellClick(this.id)"> </td>
+            <td id="j4" onmouseover="cellClick(this.id)"> </td>
+        </tr>
+        <tr>
+            <td id="a5" onmouseover="cellClick(this.id)"> </td>
+            <td id="b5" onmouseover="cellClick(this.id)"> </td>
+            <td id="c5" onmouseover="cellClick(this.id)"> </td>
+            <td id="d5" onmouseover="cellClick(this.id)"> </td>
+            <td id="e5" onmouseover="cellClick(this.id)"> </td>
+            <td id="f5" onmouseover="cellClick(this.id)"> </td>
+            <td id="g5" onmouseover="cellClick(this.id)"> </td>
+            <td id="h5" onmouseover="cellClick(this.id)"> </td>
+            <td id="i5" onmouseover="cellClick(this.id)"> </td>
+            <td id="j5" onmouseover="cellClick(this.id)"> </td>
+        </tr>
+        <tr>
+            <td id="a6" onmouseover="cellClick(this.id)"> </td>
+            <td id="b6" onmouseover="cellClick(this.id)"> </td>
+            <td id="c6" onmouseover="cellClick(this.id)"> </td>
+            <td id="d6" onmouseover="cellClick(this.id)"> </td>
+            <td id="e6" onmouseover="cellClick(this.id)"> </td>
+            <td id="f6" onmouseover="cellClick(this.id)"> </td>
+            <td id="g6" onmouseover="cellClick(this.id)"> </td>
+            <td id="h6" onmouseover="cellClick(this.id)"> </td>
+            <td id="i6" onmouseover="cellClick(this.id)"> </td>
+            <td id="j6" onmouseover="cellClick(this.id)"> </td>
+        </tr>
+        <tr>
+            <td id="a7" onmouseover="cellClick(this.id)"> </td>
+            <td id="b7" onmouseover="cellClick(this.id)"> </td>
+            <td id="c7" onmouseover="cellClick(this.id)"> </td>
+            <td id="d7" onmouseover="cellClick(this.id)"> </td>
+            <td id="e7" onmouseover="cellClick(this.id)"> </td>
+            <td id="f7" onmouseover="cellClick(this.id)"> </td>
+            <td id="g7" onmouseover="cellClick(this.id)"> </td>
+            <td id="h7" onmouseover="cellClick(this.id)"> </td>
+            <td id="i7" onmouseover="cellClick(this.id)"> </td>
+            <td id="j7" onmouseover="cellClick(this.id)"> </td>
+        </tr>
+        <tr>
+            <td id="a8" onmouseover="cellClick(this.id)"> </td>
+            <td id="b8" onmouseover="cellClick(this.id)"> </td>
+            <td id="c8" onmouseover="cellClick(this.id)"> </td>
+            <td id="d8" onmouseover="cellClick(this.id)"> </td>
+            <td id="e8" onmouseover="cellClick(this.id)"> </td>
+            <td id="f8" onmouseover="cellClick(this.id)"> </td>
+            <td id="g8" onmouseover="cellClick(this.id)"> </td>
+            <td id="h8" onmouseover="cellClick(this.id)"> </td>
+            <td id="i8" onmouseover="cellClick(this.id)"> </td>
+            <td id="j8" onmouseover="cellClick(this.id)"> </td>
+        </tr>
+        <tr>
+            <td id="a9" onmouseover="cellClick(this.id)"> </td>
+            <td id="b9" onmouseover="cellClick(this.id)"> </td>
+            <td id="c9" onmouseover="cellClick(this.id)"> </td>
+            <td id="d9" onmouseover="cellClick(this.id)"> </td>
+            <td id="e9" onmouseover="cellClick(this.id)"> </td>
+            <td id="f9" onmouseover="cellClick(this.id)"> </td>
+            <td id="g9" onmouseover="cellClick(this.id)"> </td>
+            <td id="h9" onmouseover="cellClick(this.id)"> </td>
+            <td id="i9" onmouseover="cellClick(this.id)"> </td>
+            <td id="j9" onmouseover="cellClick(this.id)"> </td>
+        </tr>
+        <tr>
+            <td id="a9" onmouseover="cellClick(this.id)"> </td>
+            <td id="b9" onmouseover="cellClick(this.id)"> </td>
+            <td id="c9" onmouseover="cellClick(this.id)"> </td>
+            <td id="d9" onmouseover="cellClick(this.id)"> </td>
+            <td id="e9" onmouseover="cellClick(this.id)"> </td>
+            <td id="f9" onmouseover="cellClick(this.id)"> </td>
+            <td id="g9" onmouseover="cellClick(this.id)"> </td>
+            <td id="h9" onmouseover="cellClick(this.id)"> </td>
+            <td id="i9" onmouseover="cellClick(this.id)"> </td>
+            <td id="j9" onmouseover="cellClick(this.id)"> </td>
+        </tr>
+    </table>

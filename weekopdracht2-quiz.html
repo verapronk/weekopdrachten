@@ -1,0 +1,84 @@
+<html>
+
+<head>
+    <script>
+        var score = 0
+
+        function check(){
+            var antwoord1 = document.getElementById("antwoord1");
+            var antwoord2 = document.getElementById("antwoord2");
+            var antwoord3 = document.getElementById("antwoord3");
+            var antwoord4 = document.getElementById("antwoord4");
+
+            var gewonnen = document.getElementById("deDiv");
+
+            if (antwoord1.checked){
+                score = score +1;
+                console.log(score)
+            }
+
+            if (antwoord2.checked){
+                score = score +1;
+                console.log(score)
+            }
+
+            if (antwoord3.checked){
+                score = score +1;
+                console.log(score)
+            }
+
+            if (antwoord4.checked){
+                score = score +1;
+                console.log(score)
+            }
+
+            if (score == 4){
+                gewonnen.innerHTML = "gewonnen!"
+            }
+           
+        }
+    </script>
+
+    <style>
+        div{
+            margin-top: 25px;
+            border: 1px solid green;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Quizzzje</h1>
+    <br>
+    <h2>Vraag 1</h2>
+    ...?<br><br>
+    <input type="checkbox" id="antwoord1"> goed antwoord <br>
+    <input type="checkbox"> antwoord 1 <br>
+    <input type="checkbox"> antwoord 1 <br>
+    <input type="checkbox"> antwoord 1 <hr>
+
+    <h2>Vraag 2</h2>
+    ...?<br><br>
+    <input type="checkbox" id="antwoord2"> goed antwoord <br>
+    <input type="checkbox"> antwoord 1 <br>
+    <input type="checkbox"> antwoord 1 <br>
+    <input type="checkbox"> antwoord 1 <hr>
+
+    <h2>Vraag 3</h2>
+    ...?<br><br>
+    <input type="checkbox" id="antwoord3"> goed antwoord <br>
+    <input type="checkbox"> antwoord 1 <br>
+    <input type="checkbox"> antwoord 1 <br>
+    <input type="checkbox"> antwoord 1 <hr>
+
+    <h2>Vraag 4</h2>
+    ...?<br><br>
+    <input type="checkbox" id="antwoord4"> goed antwoord <br>
+    <input type="checkbox"> antwoord 1 <br>
+    <input type="checkbox"> antwoord 1 <br>
+    <input type="checkbox"> antwoord 1 <hr>
+
+    <input type=button onclick="check()" value="check score!">
+    <div id="deDiv"> ... </div>
+</body>
+</html>
