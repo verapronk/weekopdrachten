@@ -1,0 +1,71 @@
+<html>
+
+<head>
+    <script>
+        // kleuren heb ik altijd nodig, dus buiten de scope van functies.
+        var wit = "white";
+        var zwart = "black";
+        var rood = "red";
+        var blauw = "blue";
+        var groen = "green";
+        var geel = "yellow";
+
+        // ik maak een functie aan die de banen bij zijn id ophaalt, zodat ik dat maar 1 keer hoef te doen.
+        function getBanen {
+            var baan1 = document.getElementById("baan1");
+            var baan2 = document.getElementById("baan2");
+            var baan3 = document.getElementById("baan3");
+        }
+
+        // zo wordt het toekennen van kleuren aan banen makkelijker.
+        function nederland() {
+            getBanen();
+            baan1 = rood;
+            baan2 = wit;
+            baan3 = blauw;
+        }
+
+    </script>
+
+    <style>
+        td {
+            height: 75px;
+            width: 350px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <input type=button onclick="start()" value="klik!">
+    <br><br>
+    <input id="nederland" type=button onclick="nederland()" value="Nederland">
+    <!--rood wit blauw-->
+    <input id="duitsland" type=button onclick="duitsland()" value="Duitsland">
+    <!--zwart rood geel-->
+    <input id="bolivia" type=button onclick="bolivia()" value="Bolivia">
+    <!--rood geel groen-->
+    <input id="armenie" type=button onclick="armenie()" value="Armenie">
+    <!--rood blauw geel-->
+    <input id="litouwen" type=button onclick="litouwen()" value="Litouwen">
+    <!--rood blauw geel-->
+    <br><br>
+    <input type=button onclick="random()" value="Random!">
+    <br><br>
+
+    <div id="deDiv"> </div>
+
+    <table>
+        <tr>
+            <td id="baan1"></td>
+        </tr>
+        <tr>
+            <td id="baan2"></td>
+        </tr>
+        <tr>
+            <td id="baan3"></td>
+        </tr>
+    </table>
+</body>
+
+</html>
