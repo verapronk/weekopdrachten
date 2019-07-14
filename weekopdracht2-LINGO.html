@@ -2,36 +2,97 @@
 
 <head>
     <script>
-        function start() {
-            var poging = document.getElementById("invoerveld");
-            var rij1 = document.getElementsByTagName("tr");
+        var woorden = ["fiets", "bingo", "koala", "brief"]
+
+        function check() {
+            var woord = woorden[0];
+            var poging = document.getElementById("invoerveld").value;
+            var rij1 = document.getElementsByClassName("rij1");
             console.log(rij1)
-            //poging.value.charAt(0));
+            setTimeout(function () { rij1[0].innerHTML = poging.charAt(0); }, 100);
+            setTimeout(function () { rij1[1].innerHTML = poging.charAt(1); }, 600);
+            setTimeout(function () { rij1[2].innerHTML = poging.charAt(2); }, 1200);
+            setTimeout(function () { rij1[3].innerHTML = poging.charAt(3); }, 1800);
+            setTimeout(function () { rij1[4].innerHTML = poging.charAt(4); }, 2400);
+
+
+            for (i = 0; i < rij1.length; i++) {
+                console.log("rij1[i]" + rij1[i]);
+                console.log("i:  " + i);
+
+                for (x = 0; x < poging.length; x++) {
+                    console.log("poging[x]" + poging[x]);
+
+                    for (y = 0; y < woord.length; y++) {
+                        console.log("woord[y]" + woord[y]);
+
+                        if (poging.charAt(0) == woord.charAt(0)) {
+                            rij1[0].style.backgroundColor = "darkorange";
+                        } else if (woord.includes(poging.charAt(0))) {
+                            rij1[0].style.backgroundColor = "green";
+                        }
+
+                        if (poging.charAt(1) == woord.charAt(1)) {
+                            rij1[1].style.backgroundColor = "darkorange";
+                        } else if (woord.includes(poging.charAt(1))) {
+                            rij1[1].style.backgroundColor = "green";
+                        }
+
+                        if (poging.charAt(2) == woord.charAt(2)) {
+                            rij1[2].style.backgroundColor = "darkorange";
+                        } else if (woord.includes(poging.charAt(2))) {
+                            rij1[2].style.backgroundColor = "green";
+                        }
+
+                        if (poging.charAt(3) == woord.charAt(3)) {
+                            rij1[3].style.backgroundColor = "darkorange";
+                        } else if (woord.includes(poging.charAt(3))) {
+                            rij1[3].style.backgroundColor = "green";
+                        }
+
+                        if (poging.charAt(4) == woord.charAt(4)) {
+                            rij1[4].style.backgroundColor = "darkorange";
+                        } else if (woord.includes(poging.charAt(4))) {
+                            rij1[4].style.backgroundColor = "green";
+                        }
+                    }
+                }
+            }
         }
+
     </script>
 
     <style>
+        @font-face {
+            font-family: "Karla";
+            src: url("fonts/Karla-Bold.ttf");
+        }
+
         div {
             margin-top: 25px;
             border: 1px solid green;
         }
 
         table {
-            width: 250px;
-            height: 250px;
+            border-collapse: collapse;
         }
 
-        table,
         tr,
         td {
-            border: 1px solid blue;
+            width: 17px;
+            font-family: "karla";
+            font-size: 20px;
+            text-align: center;
+            color: white;
+            padding: 25px;
+            border: 2px solid rgb(50, 50, 255);
             border-collapse: collapse;
-            background-color: rgb(0, 0, 156);
+            background-color: rgb(0, 0, 121);
         }
 
-        #invoerveld{
+        #invoerveld {
             height: 50px;
-            width: 250px;
+            width: 320px;
             text-align: center;
             margin-right: 15px;
         }
@@ -40,44 +101,45 @@
 
 <body>
     <input id="invoerveld" type="text" placeholder=". . . . . ">
-    <input type="button" onclick="start()" value="klik!">
+    <input type="button" onclick="check()" value="klik!">
     <br><br>
     <table>
-        <tr id="rij1">
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
-            <td>5</td>
+        <tr>
+            <td class="rij1">.</td>
+            <td class="rij1">.</td>
+            <td class="rij1">.</td>
+            <td class="rij1">.</td>
+            <td class="rij1">.</td>
         </tr>
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td class="rij2">.</td>
+            <td class="rij2">.</td>
+            <td class="rij2">.</td>
+            <td class="rij2">.</td>
+            <td class="rij2">.</td>
         </tr>
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td class="rij3">.</td>
+            <td class="rij3">.</td>
+            <td class="rij3">.</td>
+            <td class="rij3">.</td>
+            <td class="rij3">.</td>
         </tr>
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td class="rij4">.</td>
+            <td class="rij4">.</td>
+            <td class="rij4">.</td>
+            <td class="rij4">.</td>
+            <td class="rij4">.</td>
         </tr>
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td class="rij5">.</td>
+            <td class="rij5">.</td>
+            <td class="rij5">.</td>
+            <td class="rij5">.</td>
+            <td class="rij5">.</td>
         </tr>
+
 
 
 
