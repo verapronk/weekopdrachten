@@ -3,61 +3,74 @@
 <head>
     <script>
         var woorden = ["fiets", "bingo", "koala", "brief"]
+        var nummer = 0;
 
-        function check() {
+        function raden() {
+            var rijen = document.getElementsByTagName("tr");
             var woord = woorden[0];
             var poging = document.getElementById("invoerveld").value;
-            var rij1 = document.getElementsByClassName("rij1");
-            console.log(rij1)
-            setTimeout(function () { rij1[0].innerHTML = poging.charAt(0); }, 100);
-            setTimeout(function () { rij1[1].innerHTML = poging.charAt(1); }, 600);
-            setTimeout(function () { rij1[2].innerHTML = poging.charAt(2); }, 1200);
-            setTimeout(function () { rij1[3].innerHTML = poging.charAt(3); }, 1800);
-            setTimeout(function () { rij1[4].innerHTML = poging.charAt(4); }, 2400);
+            console.log("nummer: " + nummer);
+/*
+            setTimeout(function () { vakjes[1].innerHTML = poging.charAt(1) }, 200);
+            setTimeout(function () { vakjes[2].innerHTML = poging.charAt(2) }, 400);
+            setTimeout(function () { vakjes[3].innerHTML = poging.charAt(3) }, 600);
+            setTimeout(function () { vakjes[4].innerHTML = poging.charAt(4) }, 800);
+*/
+            // loop door de rijen en vakjes
+            for (i = 0; i < rijen.length; i++) {
+                var vakjes = rijen[i].getElementsByTagName("td");
+                if (i == nummer) {
+                    console.log(rijen[i]);      // huidige rij
+                    console.log(vakjes[0]);     // eerste vakje van de huidige rij
 
-
-            for (i = 0; i < rij1.length; i++) {
-                console.log("rij1[i]" + rij1[i]);
-                console.log("i:  " + i);
-
-                for (x = 0; x < poging.length; x++) {
-                    console.log("poging[x]" + poging[x]);
-
+                    // loop door de letters van het te raden woord
                     for (y = 0; y < woord.length; y++) {
-                        console.log("woord[y]" + woord[y]);
 
-                        if (poging.charAt(0) == woord.charAt(0)) {
-                            rij1[0].style.backgroundColor = "darkorange";
-                        } else if (woord.includes(poging.charAt(0))) {
-                            rij1[0].style.backgroundColor = "green";
-                        }
+                        // loop door de letters van het ingetypte woord
+                        for (x = 0; x < poging.length; x++) {
 
-                        if (poging.charAt(1) == woord.charAt(1)) {
-                            rij1[1].style.backgroundColor = "darkorange";
-                        } else if (woord.includes(poging.charAt(1))) {
-                            rij1[1].style.backgroundColor = "green";
-                        }
+                            vakjes[0].innerHTML = poging.charAt(0);
+                            vakjes[1].innerHTML = poging.charAt(1);
+                            vakjes[2].innerHTML = poging.charAt(2);
+                            vakjes[3].innerHTML = poging.charAt(3);
+                            vakjes[4].innerHTML = poging.charAt(4);
 
-                        if (poging.charAt(2) == woord.charAt(2)) {
-                            rij1[2].style.backgroundColor = "darkorange";
-                        } else if (woord.includes(poging.charAt(2))) {
-                            rij1[2].style.backgroundColor = "green";
-                        }
+                            // vergelijk de letters van het te raden woordt met de letters van het ingetypte woord
+                            if (poging.charAt(0) == woord.charAt(0)) {
+                                vakjes[0].style.backgroundColor = "darkorange";
+                                console.log(rijen[i]);
+                            } else if (woord.includes(poging.charAt(0))) {
+                                vakjes[0].style.backgroundColor = "green";
+                            }
 
-                        if (poging.charAt(3) == woord.charAt(3)) {
-                            rij1[3].style.backgroundColor = "darkorange";
-                        } else if (woord.includes(poging.charAt(3))) {
-                            rij1[3].style.backgroundColor = "green";
-                        }
+                            if (poging.charAt(1) == woord.charAt(1)) {
+                                vakjes[1].style.backgroundColor = "darkorange";
+                            } else if (woord.includes(poging.charAt(1))) {
+                                vakjes[1].style.backgroundColor = "green";
+                            }
 
-                        if (poging.charAt(4) == woord.charAt(4)) {
-                            rij1[4].style.backgroundColor = "darkorange";
-                        } else if (woord.includes(poging.charAt(4))) {
-                            rij1[4].style.backgroundColor = "green";
+                            if (poging.charAt(2) == woord.charAt(2)) {
+                                vakjes[2].style.backgroundColor = "darkorange";
+                            } else if (woord.includes(poging.charAt(2))) {
+                                vakjes[2].style.backgroundColor = "green";
+                            }
+
+                            if (poging.charAt(3) == woord.charAt(3)) {
+                                vakjes[3].style.backgroundColor = "darkorange";
+                            } else if (woord.includes(poging.charAt(3))) {
+                                vakjes[3].style.backgroundColor = "green";
+                            }
+
+                            if (poging.charAt(4) == woord.charAt(4)) {
+                                vakjes[4].style.backgroundColor = "darkorange";
+                            } else if (woord.includes(poging.charAt(4))) {
+                                vakjes[4].style.backgroundColor = "green";
+                            }
                         }
                     }
-                }
-            }
+                } // einde if i == nummer
+            } // einde for loops
+            nummer = nummer + 1;
         }
 
     </script>
@@ -79,15 +92,15 @@
 
         tr,
         td {
-            width: 17px;
+            width: 13px;
             font-family: "karla";
             font-size: 20px;
             text-align: center;
             color: white;
             padding: 25px;
-            border: 2px solid rgb(50, 50, 255);
+            border: 3px solid rgb(203, 211, 224);
             border-collapse: collapse;
-            background-color: rgb(0, 0, 121);
+            background-color: rgb(88, 123, 168);
         }
 
         #invoerveld {
@@ -101,7 +114,7 @@
 
 <body>
     <input id="invoerveld" type="text" placeholder=". . . . . ">
-    <input type="button" onclick="check()" value="klik!">
+    <input type="button" onclick="raden()" value="klik!">
     <br><br>
     <table>
         <tr>
@@ -139,9 +152,6 @@
             <td class="rij5">.</td>
             <td class="rij5">.</td>
         </tr>
-
-
-
 
     </table>
     <div id="deDiv"> ... </div>
