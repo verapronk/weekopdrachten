@@ -1,0 +1,30 @@
+<html>
+
+<head>
+    <script>
+        // nummerbord layout wordt: AB-123-A
+        var getallen = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+
+        function generate() {
+            // genereer 3 verschillende cijfers
+            var nummer1 = Math.floor(Math.random() * getallen.length);
+            var nummer2 = Math.floor(Math.random() * getallen.length);
+            var nummer3 = Math.floor(Math.random() * getallen.length);
+            console.log(nummer1+ " " + nummer2 + " " + nummer3);
+        }
+    </script>
+
+    <style>
+        div {
+            margin-top: 25px;
+            border: 1px solid green;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="button" onclick="generate()" value="klik!">
+    <div id="deDiv"> ... </div>
+</body>
+
+</html>
