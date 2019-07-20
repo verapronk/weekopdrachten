@@ -2,41 +2,58 @@
 
 <head>
     <script>
-        // nummerbord layout wordt: AB-123-A
-        var getallen = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+        var getallen = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
         var letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
         function generate() {
-            // genereer in de console
-            
-            // genereer 2 letters
-            var letter1 = letters[Math.floor(Math.random() * letters.length)];
-            var letter2 = letters[Math.floor(Math.random() * letters.length)];
-            console.log (letter1+letter2);
+            // nummerbord layout wordt: AB-123-A
+            var nummerbord = document.getElementById("nummerbord");
+            nummerbord.innerHTML = generateAB() + generate123() + generateA();
+        }
 
-            // genereer 3 verschillende cijfers
-            var nummer1 = getallen[Math.floor(Math.random() * getallen.length)];
-            var nummer2 = getallen[Math.floor(Math.random() * getallen.length)];
-            var nummer3 = getallen[Math.floor(Math.random() * getallen.length)];
-            console.log(nummer1+ " " + nummer2 + " " + nummer3);
+        function generateAB() {
+            var letterAB = letters[Math.floor(Math.random() * letters.length)] + letters[Math.floor(Math.random() * letters.length)];
+            return letterAB + "-"
+        }
 
-            // genereer 1 letter
-            var letter3 = letters[Math.floor(Math.random() * letters.length)];
-            console.log (letter3);
+        function generate123() {
+            var nummers = getallen[Math.floor(Math.random() * getallen.length)] + getallen[Math.floor(Math.random() * getallen.length)] + getallen[Math.floor(Math.random() * getallen.length)];
+            return nummers + "-";
+        }
+
+        function generateA() {
+            var letterA = letters[Math.floor(Math.random() * letters.length)];
+            return letterA;
         }
     </script>
 
     <style>
-        div {
+        @font-face {
+            font-family: "Playfair";
+            src: url("fonts/PlayfairDisplay-black.ttf");
+        }
+
+        .nummerbord {
+            height: 50px;
+            width: 250px;
             margin-top: 25px;
-            border: 1px solid green;
+            padding: 10px;
+            padding-bottom: 25px;
+            color: rgb(0, 0, 39);
+            font-family: monospace;
+            font-weight: 800;
+            font-size: 55px;
+            background-color: rgb(240, 206, 12);
+            border: 3px solid rgb(224, 166, 7);
+            border-radius: 15px;
         }
     </style>
 </head>
 
 <body>
-    <input type="button" onclick="generate()" value="klik!">
-    <div id="deDiv"> ... </div>
+    <h1>Nummerbord Generator</h1>
+    <input type="button" onclick="generate()" value="Generate!">
+    <div id="nummerbord" class="nummerbord"> AB-123-A </div>
 </body>
 
 </html>
