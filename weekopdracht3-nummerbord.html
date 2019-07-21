@@ -8,44 +8,40 @@
         function generate() {
             // nummerbord layout wordt: AB-123-A
             var nummerbord = document.getElementById("nummerbord");
-            nummerbord.innerHTML = generateAB() + generate123() + generateA();
+            nummerbord.innerHTML = getAB() + "-" +  get123() + "-" +  getA();
         }
 
-        function generateAB() {
+        function getAB() {
             var letterAB = letters[Math.floor(Math.random() * letters.length)] + letters[Math.floor(Math.random() * letters.length)];
-            return letterAB + "-"
+            return letterAB;
         }
 
-        function generate123() {
+        function get123() {
             var nummers = getallen[Math.floor(Math.random() * getallen.length)] + getallen[Math.floor(Math.random() * getallen.length)] + getallen[Math.floor(Math.random() * getallen.length)];
-            return nummers + "-";
+            return nummers;
         }
 
-        function generateA() {
+        function getA() {
             var letterA = letters[Math.floor(Math.random() * letters.length)];
             return letterA;
         }
     </script>
 
     <style>
-        @font-face {
-            font-family: "Playfair";
-            src: url("fonts/PlayfairDisplay-black.ttf");
-        }
-
         .nummerbord {
-            height: 50px;
-            width: 250px;
+            height: 25px;
+            width: 200px;
             margin-top: 25px;
-            padding: 10px;
-            padding-bottom: 25px;
+            padding: 5px;
+            padding-bottom: 20px;
             color: rgb(0, 0, 39);
             font-family: monospace;
+            text-align: center;
             font-weight: 800;
-            font-size: 55px;
+            font-size: 35px;
             background-color: rgb(240, 206, 12);
-            border: 3px solid rgb(224, 166, 7);
-            border-radius: 15px;
+            border: 3px solid rgb(22, 17, 4);
+            border-radius: 10px;
         }
     </style>
 </head>
