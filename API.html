@@ -1,0 +1,74 @@
+<html>
+
+<head>
+    <script>
+        var url = "http://colormind.io/api/";
+        var data = {
+            model: "default",
+            input: [[44, 43, 44], [90, 83, 82], "N", "N", "N"]
+        }
+
+        function getAPI() {
+            var http = new XMLHttpRequest();
+
+            http.onload = function () {
+                // arrays -each containing 3 colors-, within an array
+                var palette = JSON.parse(this.responseText).result;
+
+                // an array containing each box of the palette
+                var paletteBox = document.getElementsByTagName("td");
+
+                for (i = 0; i < paletteBox.length; i++) {
+                    // stringify the array e.g. [47, 49, 47]
+                    var colorString = JSON.stringify(palette[i]);
+                    console.log(colorString);
+
+                    // get only the numbers from the array e.g. "47, 49, 47"
+                    var colorSubstring = colorString.substring(1,9);
+                    console.log(colorString.substring(1,19));
+
+                    // create rgb value e.g. "rgb(47,49,47)"
+                    var colorRGB = "rgb(" + colorSubstring +")";
+                    console.log(colorRGB);
+
+                    paletteBox[0].style.backgroundColor = colorRGB;
+                    paletteBox[1].style.backgroundColor = colorRGB;
+                    paletteBox[2].style.backgroundColor = colorRGB;
+                    paletteBox[3].style.backgroundColor = colorRGB;
+                    paletteBox[4].innerHTML = palette[4];
+                }
+            }
+
+            http.open("POST", url, true);
+            http.send(JSON.stringify(data));
+        }
+    </script>
+
+    <style>
+        div {
+            margin-top: 25px;
+            border: 1px solid green;
+        }
+
+        td {
+            border: 1px solid orange;
+            width: 100px;
+            height: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type=button onclick="getAPI()" value="klik!">
+    <table id="palette">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+</body>
+
+</html>

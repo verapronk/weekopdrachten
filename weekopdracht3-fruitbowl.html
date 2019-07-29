@@ -1,0 +1,49 @@
+<html>
+
+<head>
+    <script>
+        var bowl1 = ["apple", "pear", "banana", "peach"];
+        var bowl2 = ["cherry", "grape", "kiwi", "orange"];
+
+        function start() {
+            var box1 = document.getElementById("box1");
+            var box2 = document.getElementById("box2");
+            box1.innerHTML = bowl1;
+            box2.innerHTML = bowl2;
+        }
+
+        function swap(){
+            bowl2.push(bowl1[0]);
+            bowl1.splice(0,1);
+
+            bowl1.push(bowl2[0]);
+            bowl2.splice(0,1);
+            console.log(bowl1);
+            console.log(bowl2);
+            box1.innerHTML = bowl1;
+            box2.innerHTML = bowl2;
+        }
+    </script>
+
+    <style>
+        #box1,
+        #box2 {
+            width: 250px;
+            height: 25px;
+            margin-top: 25px;
+            padding: 25px;
+            font-size: 18px;
+            border: 2px solid orange;
+        }
+    </style>
+</head>
+
+<body>
+    <input id="start" type=button onclick="start()" value="start"><br><br>
+    <input id="swap" type=button onclick="swap()" value="swap"><br>
+
+    <div id="box1"> bowl AAAB </div>
+    <div id="box2"> bowl B </div>
+</body>
+
+</html>
